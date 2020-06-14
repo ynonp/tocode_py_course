@@ -18,3 +18,8 @@ if n3 > tmp_max:
     tmp_max = n3
 
 print("the biggest number is :", tmp_max)
+
+# So, python has a max() function
+print(max(n1, n2, n3))
+
+
