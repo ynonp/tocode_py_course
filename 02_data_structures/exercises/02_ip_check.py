@@ -11,13 +11,12 @@ import sys
 
 user_list= sys.argv[1:]
 
+# Using dict comprehension makes this code much cleaner
 def convert_file_data_dict(val):
-    db={}
-    for v in val:
-        tmp = v.split('=')
-        db[tmp[0]]=tmp[1]
-
-    return db
+    splitstrs = [s.strip().split('=') for s in val]
+    return {
+            host: ip_address for host, ip_address in splitstrs
+            }
 
 with open('addr.txt') as addr:
     addresses = addr.readlines()
