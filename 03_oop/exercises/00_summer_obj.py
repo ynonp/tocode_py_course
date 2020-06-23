@@ -2,15 +2,19 @@
 
 class Summer:
     def __init__(self):
-        self.total = 0
+        # Better to use _ before a private member name
+        # (It's a convention but useful one)
+        self._total = 0
     
     def add(self,*args):
-        for i  in args:
-            self.total = self.total + i 
-        return self.total
+        # Python already has a sum function
+        self._total += sum(args)
+        # And I deleted your "return" statement because
+        # nobody looks on the return value
 
     def print_total(self):
-        print(f"{self.total}")
+        # Since you only have one variable, no need to use format string here
+        print(self._total)
 
 
 s = Summer()

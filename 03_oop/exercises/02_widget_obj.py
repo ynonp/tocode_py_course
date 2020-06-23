@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# This one doesn't work
+
 class Widget:
     def __init__(self,name):
         self.name = name
@@ -7,9 +9,11 @@ class Widget:
         self.built = False
 
     def add_dependency(self, *args):
+        # I think one problem is in this line:
         self.dep.append(args)
 
     def build(self):
+        # And another is in this function
         self.built = True
         for i in self.dep:
             if not i.built:
